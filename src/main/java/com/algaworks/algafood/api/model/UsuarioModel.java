@@ -11,10 +11,10 @@ public class UsuarioModel {
 	@ApiModelProperty(example = "1")
 	private Long id;
 
-	@ApiModelProperty(example = "Breno Pedro")
+	@ApiModelProperty(example = "João da Silta")
 	private String nome;
 
-	@ApiModelProperty(example = "brenopedro@14homail.com")
+	@ApiModelProperty(example = "joaosilva@homail.com")
 	private String email;
 	
 }

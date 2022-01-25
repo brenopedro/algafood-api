@@ -36,13 +36,13 @@ public class GrupoPermissaoController implements GrupoPermissaoControllerOpenApi
 		return permissaoModelAssembler.toCollectionModel(grupo.getPermissoes());
 	}
 	
-	@DeleteMapping(value = "/{permissaoId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "/{permissaoId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void desassociar(@PathVariable Long grupoId, @PathVariable Long permissaoId) {
 		cadastroGrupo.desassociarPermissao(grupoId, permissaoId);
 	}
 	
-	@PutMapping(value = "/{permissaoId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/{permissaoId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void associar(@PathVariable Long grupoId, @PathVariable Long permissaoId) {
 		cadastroGrupo.associarPermissao(grupoId, permissaoId);
