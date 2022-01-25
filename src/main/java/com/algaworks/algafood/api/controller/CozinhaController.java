@@ -47,16 +47,13 @@ public class CozinhaController implements CozinhaControllerOpenApi {
 	private CozinhaInputDisassembler cozinhaInputDisassembler;
 	
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public Page<CozinhaModel> listar(@PageableDefault(size = 10) Pageable pageable) {
+	public Page<CozinhaModel> listar(@PageableDefault() Pageable pageable) {
 		Page<Cozinha> cozinhasPage = cozinhaRepository.findAll(pageable);
 		
 		List<CozinhaModel> cozinhasModel = cozinhaModelAssembler
 				.toCollectionModel(cozinhasPage.getContent());
-		
-		Page<CozinhaModel> cozinhasModelPage = new PageImpl<>(cozinhasModel, pageable, 
-				cozinhasPage.getTotalElements());
-		
-		return cozinhasModelPage;
+
+		return new PageImpl<>(cozinhasModel, pageable, cozinhasPage.getTotalElements());
 	}
 	
 	@GetMapping(path ="/{cozinhaId}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -85,7 +82,7 @@ public class CozinhaController implements CozinhaControllerOpenApi {
 		return cozinhaModelAssembler.toModel(cozinhaAtual);
 	}
 	
-	@DeleteMapping(path ="/{cozinhaId}", produces = {})
+	@DeleteMapping(path ="/{cozinhaId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long cozinhaId) {
 		cadastroCozinha.excluir(cozinhaId);

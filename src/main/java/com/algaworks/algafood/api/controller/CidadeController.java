@@ -79,7 +79,7 @@ public class CidadeController implements CidadeControllerOpenApi {
 		}
 	}
 
-	@DeleteMapping(path ="/{cidadeId}", produces = {})
+	@DeleteMapping(path ="/{cidadeId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long cidadeId) {
 		cadastroCidade.excluir(cidadeId);	

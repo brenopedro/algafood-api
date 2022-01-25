@@ -126,7 +126,7 @@ public class FormaPagamentoController implements FormaPagamentoControllerOpenApi
 		return formaPagamentoModelAssembler.toModel(formaPagamentoAtual);
 	}
 	
-	@DeleteMapping(path ="/{formaPagamentoId}", produces = {})
+	@DeleteMapping(path ="/{formaPagamentoId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long formaPagamentoId) {
 		cadastroFormaPagamento.excluir(formaPagamentoId);	

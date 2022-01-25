@@ -36,13 +36,13 @@ public class RestauranteUsuarioResponsavelController implements RestauranteUsuar
 		return usuarioModelAssembler.toCollectionModel(restaurante.getResponsaveis());
 	}
 	
-	@DeleteMapping(value = "/{usuarioId}", produces = {})
+	@DeleteMapping(value = "/{usuarioId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void desassociar(@PathVariable Long restauranteId, @PathVariable Long usuarioId) {
 		cadastroRestaurante.desassociarResponsavel(restauranteId, usuarioId);
 	}
 	
-	@PutMapping(value = "/{usuarioId}", produces = {})
+	@PutMapping(value = "/{usuarioId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void associar(@PathVariable Long restauranteId, @PathVariable Long usuarioId) {
 		cadastroRestaurante.associarResponsavel(restauranteId, usuarioId);

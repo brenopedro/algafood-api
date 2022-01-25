@@ -46,7 +46,7 @@ public class RestauranteProdutoFotoController implements RestauranteProdutoFotoC
 	@PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public FotoProdutoModel atualizarFoto(@PathVariable Long restauranteId,
 										  @PathVariable Long produtoId, @Valid FotoProdutoInput fotoProdutoInput,
-										  @RequestPart(required = true) MultipartFile arquivo) throws IOException {
+										  @RequestPart MultipartFile arquivo) throws IOException {
 		Produto produto = cadastroProduto.buscarOuFalhar(restauranteId, produtoId);
 		
 //		MultipartFile arquivo = fotoProdutoInput.getArquivo();
@@ -63,7 +63,7 @@ public class RestauranteProdutoFotoController implements RestauranteProdutoFotoC
 		return fotoProdutoModelAssembler.toModel(fotoSalva);
 	}
 	
-	@DeleteMapping(produces = {})
+	@DeleteMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void excluir(@PathVariable Long restauranteId, 
 			@PathVariable Long produtoId) {
