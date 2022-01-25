@@ -24,7 +24,6 @@
 		<aws-java-sdk-s3.version>1.11.671</aws-java-sdk-s3.version>
 		<guava.version>31.0.1-jre</guava.version>
 		<springfox.version>3.0.0</springfox.version>
-		<springhateoas.version>2.5.6</springhateoas.version>
 	</properties>
 
 	<dependencies>
