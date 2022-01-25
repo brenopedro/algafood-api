@@ -80,7 +80,7 @@ public class SpringFoxConfig {
 				.alternateTypeRules(AlternateTypeRules.newRule(
 						typeResolver.resolve(Page.class, PedidoResumoModel.class),
 						PedidosResumoModelOpenApi.class))
-	afsfsdgf			.apiInfo(apiInfo())
+				.apiInfo(apiInfo())
 				.tags(new Tag("Cidades", "Gerencia Cidades"),
 						new Tag("Grupos", "Gerencia os grupos de usuários"),
 						new Tag("Cozinhas", "Gerencia as cozinhas"),
