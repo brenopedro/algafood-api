@@ -24,6 +24,7 @@
 		<aws-java-sdk-s3.version>1.11.671</aws-java-sdk-s3.version>
 		<guava.version>31.0.1-jre</guava.version>
 		<springfox.version>3.0.0</springfox.version>
+		<springhateoas.version>2.5.6</springhateoas.version>
 	</properties>
 
 	<dependencies>
@@ -148,6 +149,10 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 	</dependencies>
 
